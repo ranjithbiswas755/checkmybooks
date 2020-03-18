@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="icon" href="images\new.png" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#03a6f3">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<header>
+    <div class="main-menu">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light"><a class="navbar-brand" href="/"><img src="/images/cmb-logo.png" alt="logo" width="70%" height="50"></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="form-inline my-2 my-lg-0"><input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search"><span class="fa fa-search"></span></form>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="navbar-item active"><a class="text-warning" href="/">Home</a></li>
+                        <li class="navbar-item"><a class="text-warning" href="/login">Sell</a></li>
+                        <li class="navbar-item"><a class="text-warning" href="/about">About</a></li>
+                        <li class="navbar-item"><a class="text-warning" href="/login">Profile</a></li>
+                        <li class="navbar-item"><a class="text-warning" href="#">Login</a></li>
+                    </ul>
+                    <div class="cart my-2 my-lg-0"><span><a class="navbar-brand" href="/login"><img class="fa fa-shopping-cart" src="/images/cart.png" alt="Responsive image" width="20" height="20"></a><!-- <span class="quntity">3</span>--></span></div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<section class="static about-sec">
+    <div class="container">
+        <h1>Login</h1>
+        <div class="form" width="50%">
+            <form action="/login" method="post">
+                <div class="col justify-content-center">
+                    <div class="form-group">
+                        <div class="col-md-5" for="email">
+                            <label for="email">Email address:<span class="required-star">*</span></label>
+                            <input name="email" id="email" type="text" placeholder="Enter your Email id" required="">
+                        </div><br>
+                        
+                        <div class="col-md-5"><label for="Password">Password:<span class="required-star">*</span></label>
+                            <input name="password" id="password" type="password" placeholder="Enter Password" required="">
+                        </div><br>
+
+                        <div class="form-check">
+                            <input class="form-check-input" id="exampleCheck1" type="checkbox" style="width: 15px;height: 15px;">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div><br>
+                        <div class="col-lg-8 col-md-0">
+                            <button class="btn" id="loginbtn" type="login">Login</button>
+                        </div><br>
+                        <h5>New User? <a href="/signup">Register here</a></h5>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- <script>
+        console.log("hello");
+        document.getElementById("loginbtn").onclick = function(event) {
+    
+            console.log("happy");
+    
+            var temp = {
+                "email": document.getElementById("email").value,
+                "password": document.getElementById("password").value,
+            }
+            console.log(temp);
+    
+           var result = null;
+            // console.log(temp);
+            $.ajax({
+                "crossDomain": true,
+                "url": "http://localhost:3000/api/login",
+                "method": "POST",
+                "timeout": 200,
+                "data": JSON.stringify(temp),
+                "async": false,
+                "headers": {
+                    "content-type": "application/json"
+                },
+                success: function(data) {
+                    
+                    console.log("data status" + data.status);
+
+                    if (data.status == 200){
+                        alert('Welcome User!!!' + data.id);
+                        window.location="http://localhost:3000/home?id="+data.id;
+                    result = data;
+                    }
+                    else{
+                        alert('Wrong');
+                    }
+                },
+                fail: function(data) {
+                    console.log(data)
+                    result = data;
+                }
+            });
+            //console.log(result);
+        };
+    </script> -->
+
+
+</section>
+<footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="address">
+                        <h4>Our Address</h4>
+                        <h6>Check My Books</h6>
+                                <h6>Bangalore</h6>
+                                <h6>Call : 123446 5678</h6>
+                                <h6>Email : info@CheckMyBooks.com</h6>
+                    </div>
+                    <div class="timing">
+                        <h4>Timing</h4>
+                        <h6>Mon - Fri: 7am - 10pm</h6>
+                        <h6>&ZeroWidthSpace;&ZeroWidthSpace;Saturday: 8am - 10pm</h6>
+                        <h6>&ZeroWidthSpace;Sunday: 8am - 11pm</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="navigation">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/privacypolicy">Privacy Policy</a></li>
+                            <li><a href="/termsconditions">Terms</a></li>
+                            <li><a href="/">Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="navigation">
+                        <h4>Help</h4>
+                        <ul>
+                            <li><a href="/privacypolicy">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form">
+                        <h3>Quick Contact us</h3>
+                        <h6>We are now offering some good discount on selected books go and shop them</h6>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6"><input placeholder="Name" required=""></div>
+                                <div class="col-md-6"><input type="email" placeholder="Email" required=""></div>
+                                <div class="col-md-12"><textarea placeholder="Message"></textarea></div>
+                                <div class="col-md-12"><button class="btn black">Alright, Submit</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>(C) 2019. All Rights Reserved. CheckMyBooks </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="share align-middle"><span class="fb"><i class="fa fa-facebook-official"></i></span><span class="instagram"><i class="fa fa-instagram"></i></span><span class="twitter"><i class="fa fa-twitter"></i></span><span class="pinterest"><i class="fa fa-pinterest"></i></span>
+                            <span
+                                class="google"><i class="fa fa-google-plus"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>

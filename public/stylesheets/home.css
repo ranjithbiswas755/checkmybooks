@@ -1,0 +1,11 @@
+.container{
+	display: flex;
+	}
+.cards{
+    display: flex;
+}
+.card{
+    width: 18rem;
+    padding: 10px;
+	margin: 10px;
+}

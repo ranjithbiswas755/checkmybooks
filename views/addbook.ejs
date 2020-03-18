@@ -1,0 +1,90 @@
+<html lang="en">
+
+        <%- include header %>
+     
+     <body>
+         <section class="static about-sec">
+                <div class="container" >
+                    <div class="icontainer1" height="auto">
+                    <br>
+                    <label for="name"><b>Upload Book Image:</b></label>
+                    <br><br>
+                    <input type="file" name="Upload Image"><br><br>
+                    <input type="file" id="upload2" name="Upload Image">
+                            
+                    </div>
+                    <div class="icontainer2" height="auto">
+                     <div class="form">
+                    <div class="form-group">
+                        <label for="name">Book Name:</label>
+                        <span class="required-star">*</span>
+                        <input type="text" id="bookName" placeholder="Enter Book Name" required><br><br>                 
+                        
+                        <label for="phno">Book Description:</label>
+                        <span class="required-star">*</span>
+                        <input type="text" id="bookDescription" placeholder="Enter Book Description" required><br><br>   
+                  
+                        <label for="email">Author:</label>
+                        <span class="required-star">*</span>
+                        <input type="text" id="author" placeholder="Enter Author Name" required><br><br> 
+                       
+                        <label for="Password">Cost:</label>
+                        <span class="required-star">*</span> 
+                        <input type="text" id="price" placeholder="Enter Price" required>
+                    
+                        <div class="btn-sec"><br>
+                            <button type="text" class="btn" id="addBook">Add</button>
+                        </div>
+                    <br> 
+                </div>
+        </div>
+     </div>  
+     </div>
+     
+     <script>
+        console.log("Inside script");
+        document.getElementById("addBook").onclick = function(event) {
+     
+            console.log("Inside function");
+     
+            var temp = {
+               // "upload1":document.getElementsByName("upload1").value,
+                "bookName": document.getElementById("bookName").value,
+                "bookDescription": document.getElementById("bookDescription").value,
+                "author": document.getElementById("author").value,
+                "price": document.getElementById("price").value
+            }
+            console.log(temp);
+     
+           var result = null;
+            $.ajax({
+                "crossDomain": true,
+                "url": "http://localhost:8080/home/addbookdetails",
+                "method": "POST",
+                "timeout": 200,
+                "data": JSON.stringify(temp),
+                "async": false,
+                "headers": {
+                    "content-type": "application/json"
+                },
+                success: function(data) {
+                    
+                    alert('Book added to store.');
+                    console.log("data status" + data);
+                    window.location="http://localhost:8080/home/dashboard"
+                    result = data;
+                    
+                },
+                fail: function(data) {
+                    console.log(data)
+                    result = data;
+                }
+            });
+            //console.log(result);
+        };
+     </script>
+     
+     </section>
+     </body> 
+     
+     <%- include footer %>

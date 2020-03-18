@@ -1,0 +1,104 @@
+<html lang="en">
+
+   <%- include header %>
+
+<body>
+	<section class="static about-sec">
+		<div class="container" >
+			<div class="icontainer1" height="auto">
+			<br>
+					<h2 style="color: #F57A24">Profile</h2><br>
+                        <ul>   <a href="/home/profile">My Profile</a></ul><br><br>
+						<ul>   <a href="/home/addbook">Add a Book</a></ul><br><br>
+						<ul>   <a href="#">Delete a Book</a></ul><br><br>
+						<ul>   <a href="#">Your Orders</a></ul><br><br>
+			</div>
+			<div class="icontainer2" height="auto">
+             <div class="form">
+					<div class="form-group">
+                    <h2 text-align="right" style="color: #F57A24">Update Profile</h2><br>
+                    
+							<label for="name">Name:</label>
+                            <input type="text" id="name" placeholder="Enter Name" required><br>
+
+							<label for="phno">Phone Number:</label>
+                            <input type="text" id="contact" placeholder="Enter Phone Number" required><br>
+                      
+							<label for="email">Email address:</label>
+                            <input type="email" id="email" placeholder="Enter Email ID" required><br>	
+                           
+							<label for="Password">Password:</label> 
+                            <input type="password" id="password" placeholder="Enter Password" required>
+                    
+						<div class="btn-sec"><br>
+							<button class="btn" id="updateBtn" type="submit">Update</button>
+							<button class="btn black" id="deleteBtn" type="submit">Delete</button>
+						</div>
+						<br>
+                    </div>
+                 
+            </div>
+       
+            <script>
+                console.log("Inside script");
+                document.getElementById("updateBtn").onclick = function(event) {
+            
+                    console.log("Inside updateuserprofile function");
+            
+                    var temp = {
+                        "name": document.getElementById("name").value,
+                        "contact": document.getElementById("contact").value,
+                        "email": document.getElementById("email").value,
+                        "password": document.getElementById("password").value,
+                    }
+                    console.log(temp);
+            
+                   var result = null;
+                    $.ajax({
+                        "crossDomain": true,
+                        "url": "http://localhost:8080/home/updateuserprofile",
+                        "method": "PUT",
+                        "timeout": 200,
+                        "data": JSON.stringify(temp),
+                        "async": false,
+                        "headers": {
+                            "content-type": "application/json"
+                        },
+                        success: function(data) {
+                            alert('Your data is updated with us.');
+                            console.log("data status" + data);
+                            window.location="http://localhost:8080/home/profile"
+                            result = data;
+                        },
+                        fail: function(data) {
+                            console.log(data)
+                            result = data;
+                        }
+                    });
+                };
+            
+                document.getElementById("deleteBtn").onclick = function(event) {
+                    $.ajax({
+                        "crossDomain": true,
+                        "url": "http://localhost:8080/home/deleteuser",
+                        "method": "DELETE",
+                        "timeout": 200,
+                        "async": false,
+                        "headers": {
+                            "content-type": "application/json"
+                        },
+                        success: function(data) {
+                            alert('Your account has been deleted successfully!');
+                            window.location="http://localhost:8080"
+                            result = data;
+                        },
+                        fail: function(data) {
+                            result = data;
+                        }
+                    });
+                };
+            </script>
+    </section>
+</body>
+
+<%- include footer %>

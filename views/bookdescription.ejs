@@ -1,0 +1,45 @@
+<html lang="en">
+
+   <%- include header %>
+    <body>
+<section class="static about-sec">
+        <div class="container"   >
+		
+		<div class = row>
+             <div class="col-md-5">
+			 <img src = "/images/hello.jpg" alt="book">
+             </div>
+             
+             <div class="col-md-7">
+                    <div class="col justify-content-right">
+					<div class="form-group">
+					
+                        <div class="col-md-5">
+                           <label for="book name"><b>Book Name:</b><br><%= books[0].bookName %></label> 
+                        </div><br>
+
+						<div class="col-md-5">
+                            <label for="Book Description"><b>Book Description:</b><br><%= books[0].bookDescription %></label>
+                        </div><br>
+
+                        <div class="col-md-5">
+                            <label for="author name"><b>Author Name:</b> <br><%= books[0].author %></label> 
+                        </div><br>
+
+                        <div class="col-md-5">
+                            <label for="cost"> <b>Price:</b><br><%= books[0].price %></label>
+                        </div><br>
+                        
+					    <div class="col-lg-8 col-md-0">
+                            
+                            <div class="btn-sec"><br>
+                                <button class="btn" id="contact" type="submit">Contact Now</button><br><br>
+                                <button class="btn black" id="addtocart" type="submit">Add to Cart</button>
+                            </div><br><br>
+						 </div> 
+                    </div>
+            </div>
+		</div>	
+        </div>
+    </section>
+    <%- include footer %>

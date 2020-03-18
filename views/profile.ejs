@@ -1,0 +1,32 @@
+<html lang="en">
+
+   <%- include header %>
+
+<body>
+	<section class="static about-sec">
+		<div class="container" >
+			<div class="icontainer1" height="auto">
+			<br>
+					<h2 style="color: #F57A24">Profile</h2><br>
+            			<ul>   <a href="/home/updateprofile">Update Profile</a></ul><br><br>
+						<ul>   <a href="/home/addbook">Add a Book</a></ul><br><br>
+						<ul>   <a href="#">Delete a Book</a></ul><br><br>
+						<ul>   <a href="#">Your Orders</a></ul><br><br>
+					
+			</div>
+			<div class="icontainer2" height="auto">
+             <div class="form">
+			 
+    
+					<div class="form-group">
+					<h2 text-align="right" style="color: #F57A24">My Profile</h2><br>
+						<h5>
+                            <label for="name"><b style = "color: #ff9700">Name:</b> <%=data[0].name%> </label><br>	
+                            <label for="contact"><b style = "color: #ff9700">Phone No.:</b>  <%=data[0].contact%> </label><br>
+                            <label for="email"><b style = "color: #ff9700">Email ID:</b> <%=data[0].email%> </label><br>
+                        </h5>
+                    </div>    
+            </div>
+    </section>
+</body>
+ <%- include footer %>

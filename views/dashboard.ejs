@@ -1,0 +1,53 @@
+<html lang="en">
+
+   <%- include header %>
+    <body>
+      <div class="container">
+      
+              <div class="col-xs-4">
+                  <p style="text-align: center"><b>Choose Year</b></p>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">First</a><br><br>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Second</a><br><br>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Third</a><br><br>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Fourth</a><br>
+                  <br>
+                  <br>
+                  <p style="text-align: center"><b>Choose Department</b></p>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Computer Science</a><br><br>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Electrical</a><br><br>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Electronics</a><br><br>
+                  <a href="#" class="btn btn-default " style="color: black; width: 200px">Mechanical</a><br><br>
+                  <br>
+                  <br>
+                  <p style="text-align: center"><b>Competitive Exams</b></p>
+                  <a href="#" class="btn btn-default" style="color: black; width: 200px">GATE</a><br><br>
+                  <a href="#" class="btn btn-default" style="color: black; width: 200px">CAT</a><br><br>
+                  <a href="#" class="btn btn-default" style="color: black; width: 200px">GRE</a><br><br>
+                  <a href="#" class="btn btn-default" style="color: black; width: 200px">GMAT</a><br><br>
+                  
+              </div>
+              <div class="col-xs-8" style="margin-left: 7%">
+                <% if(books.length){
+                        for(var j=0;j<books.length/3;j++){ %>
+                                <div class="cards" >
+                                        <% for(var i=(3*j);i<3*(j+1)&&i<books.length;i++){ %>
+                                                <div class="card" style="width: 15rem;">
+                                                        <div class="card-body">
+                                                                <h5 class="card-title"><%= books[i].bookName %></h5>
+                                                                <h6 class="card-title" style="text-align:center"> Rs. <%= books[i].price %></h6>
+                                                                <a href='/home/bookdescription<%= books[i].bookId %>'>
+                                                                <button id="viewbook" class="btn black">View Book</button> </a>
+                                                        </div>
+                                                </div>
+                                        <% } %>
+                                </div>
+                        <% } %>
+                <% } else { %>
+                        <script>alert("No books found!")</script>
+                <% } %>        
+                </div> 
+      </div>
+  
+</body>
+
+<%- include footer %>

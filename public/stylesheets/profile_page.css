@@ -1,0 +1,48 @@
+
+/* .icontainer{
+	padding-top: 5%;
+	list-style-type: none;
+	width:120%;
+	height:100%;
+	display:flex;
+} */
+
+.icontainer1 {
+   width: 15%;
+  float:left; 
+}
+
+.icontainer h2{
+	font-size: 33px;
+	color: #F57A24;
+}
+.icontainer1 ul a{
+	font-weight: bold;
+	color: blue;
+}
+
+.icontainer2 label{
+	font-weight: bold;
+	color: black;
+}
+
+.form-group {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left:25%;  
+}
+
+.form-group input {
+    width: 30%;
+    height: 50px;
+    padding-left: 20px;
+     }
+
+
+.icontainer2
+{
+  width:60%;
+  float: left;
+  
+}
+
